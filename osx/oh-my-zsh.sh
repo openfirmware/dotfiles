@@ -1,3 +1,5 @@
 # Load OS X-specific plugins for oh-my-zsh
 
-plugins=($plugins brew)
+if [ $OSX ]; then
+	plugins=($plugins brew)
+fi

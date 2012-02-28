@@ -1,6 +1,9 @@
 # shortcut to this dotfiles path is $DOTFILES
 export DOTFILES=$HOME/.dotfiles
 
+# load OS check
+source $DOTFILES/zsh/check-os.sh
+
 # oh-my-zsh configuration
 ZSH=$DOTFILES/zsh/oh-my-zsh
 
