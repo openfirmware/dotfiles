@@ -1,0 +1,5 @@
+# Ignore all bundles
+bundle/*
+
+# But not vundle
+!bundle/vundle
