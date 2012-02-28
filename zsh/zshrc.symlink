@@ -1,4 +1,4 @@
-# shortcut to this dotfiles path is $DOTFILES2
+# shortcut to this dotfiles path is $DOTFILES
 export DOTFILES=$HOME/.dotfiles
 
 # oh-my-zsh configuration
@@ -8,8 +8,9 @@ ZSH_THEME="tjkirch"
 
 DISABLE_AUTO_UPDATE="true"
 
-# oh-my-zsh plugins to load
-plugins=(git)
+# load oh-my-zsh plugins out of topic dirs
+plugins=()
+for config_file ($DOTFILES/*/oh-my-zsh.sh) source $config_file
 
 source $ZSH/oh-my-zsh.sh
 # End oh-my-zsh config
