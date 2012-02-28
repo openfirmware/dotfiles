@@ -91,6 +91,7 @@ repository and I'd love to get it fixed for you!
 
 * Figure out which oh-my-zsh plugins work and which do not.
 * Setup oh-my-zsh automatic update to pull in submodule.
+* Warn if zsh is not installed.
 
 ## thanks
 
