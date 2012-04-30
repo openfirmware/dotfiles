@@ -24,6 +24,7 @@ syntax enable
 set encoding=utf-8
 set showcmd         " Display incomplete commands
 syntax on
+set clipboard=unnamed
 
 filetype plugin indent on
 
