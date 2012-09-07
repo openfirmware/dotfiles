@@ -2,7 +2,6 @@
 unbind C-b
 unbind l
 set -g prefix C-a
-bind-key C-a last-window
 
 # Reload key
 bind r source-file ~/.tmux.conf
