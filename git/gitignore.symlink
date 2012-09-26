@@ -5,3 +5,5 @@
 *~
 *.swp
 *.rbc
+zeus.json
+rails_best_practices_output.html
