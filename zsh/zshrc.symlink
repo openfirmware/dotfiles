@@ -33,3 +33,6 @@ if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
 fi
+
+alias vim="nocorrect vim"
+alias sudo="nocorrect sudo"
