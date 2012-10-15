@@ -34,5 +34,8 @@ then
   source ~/.localrc
 fi
 
-alias vim="nocorrect vim"
+export EDITOR=vim
+
+# Commands that should not be autocompleted to file paths
 alias sudo="nocorrect sudo"
+alias knife="nocorrect knife"
