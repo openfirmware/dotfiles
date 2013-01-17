@@ -21,9 +21,6 @@ source $ZSH/oh-my-zsh.sh
 # source every .zsh file in dotfiles, but only at depth 1
 for config_file ($DOTFILES/*/*.zsh) source $config_file
 
-# load every completion after oh-my-zsh
-for config_file ($DOTFILES/**/completion.sh) source $config_file
-
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Code
 
@@ -39,3 +36,4 @@ export EDITOR=vim
 # Commands that should not be autocompleted to file paths
 alias sudo="nocorrect sudo"
 alias knife="nocorrect knife"
+
