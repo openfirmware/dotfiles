@@ -18,3 +18,8 @@ defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
+
+# Disable icons bouncing in the Dock
+defaults write com.apple.dock no-bouncing -bool TRUE
+killall Dock
+
