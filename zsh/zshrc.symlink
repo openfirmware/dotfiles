@@ -33,6 +33,9 @@ fi
 
 export EDITOR=vim
 
+# Need this to sign things
+export GPG_TTY=`tty`
+
 # Commands that should not be autocompleted to file paths
 alias sudo="nocorrect sudo"
 alias knife="nocorrect knife"
