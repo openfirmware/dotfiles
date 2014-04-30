@@ -15,6 +15,3 @@ setw -g mode-keys vi
 unbind ^A
 bind ^A select-pane -t :.+
 
-set-option -g mouse-select-pane on
-set-option -g mouse-select-window on
-set-window-option -g mode-mouse on
