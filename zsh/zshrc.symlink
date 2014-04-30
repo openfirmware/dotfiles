@@ -11,9 +11,7 @@ ZSH_THEME="tjkirch"
 
 DISABLE_AUTO_UPDATE="true"
 
-# load oh-my-zsh plugins out of topic dirs
 plugins=()
-for config_file ($DOTFILES/*/oh-my-zsh.sh) source $config_file
 
 source $ZSH/oh-my-zsh.sh
 # End oh-my-zsh config
