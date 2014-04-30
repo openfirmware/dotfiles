@@ -45,10 +45,6 @@ do
   source $file
 done
 
-# Commands that should not be autocompleted to file paths
-alias sudo="nocorrect sudo"
-alias knife="nocorrect knife"
-
 #
 # RVM
 #
