@@ -3,23 +3,30 @@
 # Aliases, functions, shell options, key bindings
 #
 
-# oh-my-zsh configuration
+#
+# oh-my-zsh
+#
+
 ZSH=$DOTFILES/zsh/oh-my-zsh
-
 ZSH_THEME="tjkirch"
-
 DISABLE_AUTO_UPDATE="true"
-
 plugins=()
-
 source $ZSH/oh-my-zsh.sh
-# End oh-my-zsh config
 
-# source every .zsh file in dotfiles, but only at depth 1
-for config_file ($DOTFILES/*/*.zsh) source $config_file
+#
+# Completion
+#
 
-# your project folder that we can `c [tab]` to
-export PROJECTS=~/Code
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+# load every completion after autocomplete loads
+completion_files=($DOTFILES/**/completion.zsh)
+for file in $completion_files
+do
+  source $file
+done
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
@@ -28,7 +35,30 @@ then
   source ~/.localrc
 fi
 
+#
+# Aliases
+#
+
+alias_files=($DOTFILES/**/aliases.zsh)
+for file in $alias_files
+do
+  source $file
+done
+
 # Commands that should not be autocompleted to file paths
 alias sudo="nocorrect sudo"
 alias knife="nocorrect knife"
+
+#
+# RVM
+#
+
+if [[ -s $HOME/.rvm/scripts/rvm ]]; then
+  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+  source $HOME/.rvm/scripts/rvm
+fi
+
+if [[ -s /etc/profile.d/rvm.sh ]]; then
+  source /etc/profile.d/rvm.sh
+fi
 

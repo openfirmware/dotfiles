@@ -35,6 +35,13 @@ do
   source $file
 done
 
+# Load Env Files
+env_files=($DOTFILES/**/env.zsh)
+for file in $env_files
+do
+  source $file
+done
+
 # Set other ENV variables
 export EDITOR=vim
 export VISUAL=vim
