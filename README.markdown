@@ -9,7 +9,7 @@ subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
 
 ## what's different
 
-What's different from Holman's dotfiles? I included [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) for one. This meant some definitions had to change, such as $ZSH to $DOTFILES. I am also relying on oh-my-zsh's plugin system instead of building my own in the topic areas.
+What's different from Holman's dotfiles? I included [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) for one. This meant some definitions had to change, such as `$ZSH` to `$DOTFILES`. I am also relying on oh-my-zsh's plugin system instead of building my own in the topic areas.
 
 I am loading the ENV and PATH files in the `zshenv`, and the ALIASES in the `zshrc`. There is no "wholesale" loading of `zsh` files now.
 
