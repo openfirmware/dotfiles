@@ -3,6 +3,9 @@ unbind C-b
 unbind l
 set -g prefix C-a
 
+# Renumber windows when one is closed
+set -g renumber-windows on
+
 # Reload key
 bind r source-file ~/.tmux.conf
 
@@ -14,6 +17,7 @@ bind '"' split-window -c "#{pane_current_path}"
 bind-key a send-prefix
 
 set -g default-terminal "screen-256color"
+set -g default-shell /usr/local/bin/zsh
 set -g history-limit 1000
 setw -g mode-keys vi
 
