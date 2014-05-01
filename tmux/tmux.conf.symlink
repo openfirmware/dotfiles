@@ -6,6 +6,11 @@ set -g prefix C-a
 # Reload key
 bind r source-file ~/.tmux.conf
 
+# Set default directory to current path
+bind c new-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+bind '"' split-window -c "#{pane_current_path}"
+
 bind-key a send-prefix
 
 set -g default-terminal "screen-256color"
