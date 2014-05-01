@@ -4,18 +4,36 @@
 # Updates tools and libraries to start your day.
 #
 
+autoload -U colors
+colors
+
 # Check for if tools are installed
 brew_installed=$(! type brew &> /dev/null; echo $?)
 rvm_installed=$(! type rvm &> /dev/null; echo $?)
 
-# Update Homebrew if installed
+# Update homebrew if installed
 if (($brew_installed)); then
 	echo "Updating homebrew…"
 	brew update
 fi
 
-# # Update RVM if installed
+# Update RVM if installed
 if (($rvm_installed)); then
 	echo "Updating RVM…"
 	rvm get stable
+fi
+
+# List outdated homebrew packages
+if (($brew_installed)); then
+	outdated_count=$(brew outdated | wc -l | tr -d ' ')
+
+	if (($outdated_count > 25)); then
+		echo "${bold_color}You have $outdated_count outdated brew packages!!${reset_color}"
+	elif (($outdated_count == 1)); then
+		echo "You have $outdated_count outdated brew package"
+	elif (($outdated_count == 0)); then
+		echo "${fg[green]}All your brew packages are up to date!${reset_color}"
+	else
+		echo "You have $outdated_count outdated brew packages"
+	fi
 fi
