@@ -1,0 +1,21 @@
+#!/bin/zsh
+#
+# breakfast machine
+# Updates tools and libraries to start your day.
+#
+
+# Check for if tools are installed
+brew_installed=$(! type brew &> /dev/null; echo $?)
+rvm_installed=$(! type rvm &> /dev/null; echo $?)
+
+# Update Homebrew if installed
+if (($brew_installed)); then
+	echo "Updating homebrew…"
+	brew update
+fi
+
+# # Update RVM if installed
+if (($rvm_installed)); then
+	echo "Updating RVM…"
+	rvm get stable
+fi
