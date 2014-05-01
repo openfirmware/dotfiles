@@ -1,3 +1,4 @@
+#!/bin/zsh
 #
 # Environment Variables.
 # Sourced by all zsh instances.
@@ -28,7 +29,10 @@ if `which lsb_release &> /dev/null`; then
   fi
 fi
 
-# Load Path Files
+# Load Path Files.
+# Reset PATH in case ZSHENV gets loaded more than once.
+PATH=''
+source /etc/zshenv
 path_files=($DOTFILES/**/path.zsh)
 for file in $path_files
 do
