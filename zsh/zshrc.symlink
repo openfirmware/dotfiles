@@ -10,7 +10,7 @@
 ZSH=$DOTFILES/zsh/oh-my-zsh
 ZSH_THEME="tjkirch"
 DISABLE_AUTO_UPDATE="true"
-plugins=()
+plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 #
