@@ -5,5 +5,5 @@ if [ $OSX ]; then
     export PATH="$pg_app_bin:$PATH"
   fi
 
-  export PATH="/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+  export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
