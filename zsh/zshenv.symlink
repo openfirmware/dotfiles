@@ -32,7 +32,9 @@ fi
 # Load Path Files.
 # Reset PATH in case ZSHENV gets loaded more than once.
 PATH=''
-source /etc/zshenv
+[[ -f /etc/zshenv ]] && source /etc/zshenv
+[[ -f /etc/zsh/zshenv ]] && source /etc/zsh/zshenv
+
 path_files=($DOTFILES/**/path.zsh)
 for file in $path_files
 do
