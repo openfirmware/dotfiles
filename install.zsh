@@ -3,7 +3,7 @@
 echo "Installing dotfiles…"
 
 function link_dotfile() {
-	ln -Fsv "$1" "$2"
+	ln -Ffsv "$1" "$2"
 }
 
 all=0
