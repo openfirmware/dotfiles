@@ -10,6 +10,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'wincent/Command-T'
 Bundle 'itspriddle/vim-jquery'
+Bundle 'junegunn/vim-easy-align'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-haml'
 Bundle 'leshill/vim-json'
@@ -48,8 +49,11 @@ set smartcase
 let mapleader=","
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+" Buffer switching
+map <leader>a :bprev<Return>
+map <leader>s :bnext<Return>
+map <leader>d :bd<Return>
+map <leader>f :b<Return>
 
 " Powerline
 if ! has('gui_running')
@@ -61,3 +65,9 @@ if ! has('gui_running')
   augroup END
 endif
 
+" EasyAlign
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
