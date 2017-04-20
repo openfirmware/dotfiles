@@ -2,7 +2,7 @@
 
 ## dotfiles
 
-Your dotfiles are how you personalize your system. This is my mix. It is based off of [Zach Holman's excellent dotfiles](https://github.com/holman/dotfiles) strategy. It is biased towards OS X somewhat, but should work with any *NIX. I think.
+Your dotfiles are how you personalize your system. This is my mix. It is based off of [Zach Holman's excellent dotfiles](https://github.com/holman/dotfiles) strategy. It is biased towards OS X somewhat, but should work with any \*NIX. I think.
 
 If you're interested in the philosophy behind why projects like these are awesome, you might want to [read Zach Holman's post on the
 subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
@@ -21,6 +21,8 @@ I also pulled out quite a bunch of stuff I don't use, or replaced it wholesale (
 - `cd ~/.dotfiles`
 - `git submodule update --init`
 - `rake install`
+- `brew install fzf`
+- `/usr/local/opt/fzf/install`
 
 The install rake task will symlink the appropriate files in `.dotfiles` to your home directory. Everything is configured and tweaked within `~/.dotfiles`, though.
 
