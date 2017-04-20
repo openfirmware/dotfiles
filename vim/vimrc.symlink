@@ -15,7 +15,8 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-haml'
 Bundle 'leshill/vim-json'
 Bundle 'vim-scripts/JavaScript-Indent'
-Bundle 'Lokaltog/vim-powerline'
+Plugin 'vim-airline/vim-airline'
+
 
 filetype plugin indent on
 
