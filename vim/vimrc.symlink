@@ -8,7 +8,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'wincent/Command-T'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'pangloss/vim-javascript'
@@ -17,6 +16,8 @@ Bundle 'leshill/vim-json'
 Bundle 'vim-scripts/JavaScript-Indent'
 Plugin 'vim-airline/vim-airline'
 
+" Load fuzzy finder
+set rtp+=/usr/local/opt/fzf
 
 filetype plugin indent on
 
