@@ -14,7 +14,6 @@ Bundle 'junegunn/vim-easy-align'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-haml'
 Bundle 'leshill/vim-json'
-Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/JavaScript-Indent'
 Bundle 'Lokaltog/vim-powerline'
 
