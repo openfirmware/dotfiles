@@ -1,3 +1,0 @@
-#!/bin/bash
-
-sudo chmod -v -v ugo+x /usr/libexec/path_helper
