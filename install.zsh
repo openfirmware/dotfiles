@@ -14,3 +14,5 @@ do
 	link_dotfile $file $HOME/.$filename
 done
 
+echo "Installing binaries…"
+rsync -rv ./bin/ $HOME/bin
