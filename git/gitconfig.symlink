@@ -1,0 +1,16 @@
+# Sample gitconfig
+#
+# This is a sample gitconfig. Usually we keep a lot of sensitive information
+# here (things like authentication tokens, email addresses, and so on), so this
+# file is ignored in this project's .gitignore.
+[user]
+        name = James Badger
+        email = james@jamesbadger.ca
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+[core]
+        excludesfile = ~/.gitignore
+[apply]
+        whitespace = nowarn
