@@ -1,0 +1,14 @@
+#!/bin/bash
+# Fix Sublime Text Package Control SSL errors that can cause
+# package index updates and package installs to fail.
+# Solution is to have the GitHub cert chain at the top of the
+# file, not the end, for some reason.
+set -e
+
+APPDIR="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+USER="$APPDIR/Package Control.user-ca-bundle"
+OS="$APPDIR/oscrypto-ca-bundle.crt"
+OUTPUT="$APPDIR/Package Control.merged-ca-bundle"
+
+cat "$USER" > "$OUTPUT"
+cat "$OS" >> "$OUTPUT"

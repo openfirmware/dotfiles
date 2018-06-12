@@ -1,0 +1,6 @@
+#!/bin/bash
+# Empty MacOS ASL log directory, which can slow down
+# opening new Terminal windows
+set -e
+
+rm -rf /private/var/log/asl/*.asl
