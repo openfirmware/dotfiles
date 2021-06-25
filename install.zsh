@@ -18,6 +18,13 @@ echo "Installing binaries…"
 rsync -rv ./bin/ $HOME/bin
 
 echo "Installing plugins…"
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+else
+  echo "Vundle already installed."
+fi
+vim +PluginInstall +qall
+
 if [ ! -d ~/.tmux/plugins/tpm ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 else

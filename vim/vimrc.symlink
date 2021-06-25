@@ -4,10 +4,14 @@ filetype off
 set viminfo^=!
 
 " Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
 Bundle 'junegunn/vim-easy-align'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-haml'
@@ -15,10 +19,9 @@ Bundle 'leshill/vim-json'
 Bundle 'vim-scripts/JavaScript-Indent'
 Plugin 'vim-airline/vim-airline'
 
-" Load fuzzy finder
-set rtp+=/usr/local/opt/fzf
-
-filetype plugin indent on
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 set t_Co=256
 syntax enable
@@ -27,8 +30,6 @@ set showcmd         " Display incomplete commands
 syntax on
 
 set laststatus=2
-
-filetype plugin indent on
 
 " Whitespace
 set nowrap
@@ -44,10 +45,6 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-
-" Command-T
-let mapleader=","
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " Buffer switching
 map <leader>a :bprev<Return>
