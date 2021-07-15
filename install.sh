@@ -17,9 +17,6 @@ do
 	link_dotfile $(pwd)/$file $HOME/.$filename
 done
 
-echo "Installing binaries…"
-rsync -rv ./bin/ $HOME/bin
-
 echo "Installing plugins…"
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
