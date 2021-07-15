@@ -1,24 +1,24 @@
-#!/usr/bin/env zsh
+#!/usr/bin/bash
+set -e
 
-echo "Installing dotfiles…"
+# Install packages
+# TODO: Add OS switch
+sudo apt install powerline
 
+# Install symlinks to configurations
 function link_dotfile() {
 	ln -Ffsv "$1" "$2"
 }
 
-all=0
-linkables=($PWD/**/*.symlink)
+linkables=$(find . -maxdepth 2 -name "*.symlink" -print)
 for file in $linkables
 do
 	filename=$(basename "$file" .symlink)
-	link_dotfile $file $HOME/.$filename
+	link_dotfile $(pwd)/$file $HOME/.$filename
 done
 
 echo "Installing binaries…"
 rsync -rv ./bin/ $HOME/bin
-
-echo "Installing powerline…"
-sudo apt install powerline
 
 echo "Installing plugins…"
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
