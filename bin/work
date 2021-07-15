@@ -1,5 +1,0 @@
-#!/bin/zsh
-# Open a new tmux session in the working code directory
-
-cd "$HOME/code/work"
-/usr/local/bin/tmux new -s work

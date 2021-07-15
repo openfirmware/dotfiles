@@ -3,7 +3,7 @@ set -e
 
 # Install packages
 # TODO: Add OS switch
-sudo apt install powerline
+sudo apt install powerline fish
 
 # Install symlinks to configurations
 function link_dotfile() {
