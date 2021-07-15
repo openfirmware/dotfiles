@@ -16,8 +16,9 @@ Bundle 'junegunn/vim-easy-align'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-haml'
 Bundle 'leshill/vim-json'
-Bundle 'vim-scripts/JavaScript-Indent'
-Plugin 'vim-airline/vim-airline'
+Bundle 'vim-scripts/javascript-indent'
+Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -51,16 +52,6 @@ map <leader>a :bprev<Return>
 map <leader>s :bnext<Return>
 map <leader>d :bd<Return>
 map <leader>f :b<Return>
-
-" Powerline
-if ! has('gui_running')
-  set ttimeoutlen=10
-  augroup FastEscape
-    autocmd!
-    au InsertEnter * set timeoutlen=0
-    au InsertLeave * set timeoutlen=1000
-  augroup END
-endif
 
 " EasyAlign
 " Start interactive EasyAlign in visual mode (e.g. vipga)

@@ -17,6 +17,9 @@ done
 echo "Installing binaries…"
 rsync -rv ./bin/ $HOME/bin
 
+echo "Installing powerline…"
+sudo apt install powerline
+
 echo "Installing plugins…"
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

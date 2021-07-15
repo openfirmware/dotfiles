@@ -26,6 +26,9 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-sidebar'
 
+# Enable powerline
+run-shell "powerline-daemon -q"
+source "/usr/share/powerline/bindings/tmux/powerline.conf"
 
 set -g @sidebar-tree-command 'ls -1AGp'
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)

@@ -14,6 +14,9 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
+# powerline
+. /usr/share/powerline/bindings/zsh/powerline.zsh
+
 #
 # Completion
 #
