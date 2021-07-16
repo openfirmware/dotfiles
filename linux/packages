@@ -2,5 +2,6 @@
 # file is converted into a single apt install command.
 curl
 fish
+grc
 powerline
 tmux
