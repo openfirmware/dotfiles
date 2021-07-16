@@ -11,7 +11,7 @@ if echo $os | grep -iq 'linux'; then
   #####################
   echo "linux detected."
   
-  sudo apt install powerline fish
+  sudo apt install powerline fish curl
   sudo update-alternatives --set editor /usr/bin/vim.basic
 
 elif echo $os | grep -iq 'darwin'; then
@@ -54,5 +54,6 @@ sudo chsh $USER -s /usr/bin/fish
 
 fish fish/defaults.fish
 fish fish/abbreviations.fish
+fish fish/install_fisher.fish
 
 echo "Default shell changes will take affect after a logout."
