@@ -3,6 +3,7 @@ set -e
 
 # Install packages
 # TODO: Add OS switch
+echo "# Installing packages #"
 sudo apt install powerline fish
 
 # Install symlinks to configurations
@@ -17,7 +18,7 @@ do
 	link_dotfile $(pwd)/$file $HOME/.$filename
 done
 
-echo "Installing plugins…"
+echo "# Installing plugins #"
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 else
@@ -30,3 +31,9 @@ if [ ! -d ~/.tmux/plugins/tpm ]; then
 else
   echo "tmux plugin manager already installed."
 fi
+
+echo "# Setting up fish #"
+sudo chsh $USER -s /usr/bin/fish
+
+fish fish/defaults.fish
+fish fish/abbreviations.fish
