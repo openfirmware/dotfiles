@@ -2,9 +2,26 @@
 set -e
 
 # Install packages
-# TODO: Add OS switch
 echo "# Installing packages #"
-sudo apt install powerline fish
+
+os=$(uname -a)
+
+if echo $os | grep -iq 'linux'; then
+  # Linux Configuration
+  #####################
+  echo "linux detected."
+  
+  sudo apt install powerline fish
+  sudo update-alternatives --set editor /usr/bin/vim.basic
+
+elif echo $os | grep -iq 'darwin'; then
+  # MacOS Configuration
+  #####################
+  echo "MacOS detected."
+  
+  sudo port install fish
+  pip install --user powerline-status
+fi
 
 # Install symlinks to configurations
 function link_dotfile() {
