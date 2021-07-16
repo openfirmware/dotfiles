@@ -16,7 +16,7 @@ if echo $os | grep -iq 'linux'; then
   sudo update-alternatives --set editor /usr/bin/vim.basic
 
   mkdir -p $HOME/.config/fish/conf.d
-  echo 'source /usr/local/etc/grc.fish' > $HOME/.config/fish/conf.d/grc
+  echo 'source /etc/grc.fish' > $HOME/.config/fish/conf.d/grc.fish
 
 elif echo $os | grep -iq 'darwin'; then
   # MacOS Configuration
