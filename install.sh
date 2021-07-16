@@ -12,7 +12,7 @@ if echo $os | grep -iq 'linux'; then
   echo "linux detected."
   
   packages=$(grep -v '#' linux/packages | tr '\n' ' ')
-  sudo apt install $packages
+  sudo apt install -y $packages
   sudo update-alternatives --set editor /usr/bin/vim.basic
 
 elif echo $os | grep -iq 'darwin'; then
