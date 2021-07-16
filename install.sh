@@ -54,3 +54,5 @@ sudo chsh $USER -s /usr/bin/fish
 
 fish fish/defaults.fish
 fish fish/abbreviations.fish
+
+echo "Default shell changes will take affect after a logout."
