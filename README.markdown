@@ -2,12 +2,13 @@
 
 Some dotfiles to set up my defaults for working on the command line.
 
-* fish
-* grc
-* nvm.fish
-* powerline
-* starship
-* tmux
+* [done](https://github.com/franciscolourenco/done)
+* [fish](https://fishshell.com/)
+* [grc](https://github.com/garabik/grc)
+* [nvm.fish](https://github.com/jorgebucaran/nvm.fish)
+* [powerline](https://powerline.readthedocs.io/en/master/overview.html)
+* [starship](https://starship.rs/)
+* [tmux](https://en.wikipedia.org/wiki/Tmux)
 
 ## install
 
