@@ -1,6 +1,13 @@
 # openfirmware/dotfiles
 
-Some dotfiles to set up my defaults for working on the command line. I am using the Fish shell with tmux and vim.
+Some dotfiles to set up my defaults for working on the command line.
+
+* fish
+* grc
+* nvm.fish
+* powerline
+* starship
+* tmux
 
 ## install
 
