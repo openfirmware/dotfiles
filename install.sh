@@ -11,7 +11,8 @@ if echo $os | grep -iq 'linux'; then
   #####################
   echo "linux detected."
   
-  sudo apt install powerline fish curl
+  packages=$(grep -v '#' linux/packages | tr '\n' ' ')
+  sudo apt install $packages
   sudo update-alternatives --set editor /usr/bin/vim.basic
 
 elif echo $os | grep -iq 'darwin'; then
@@ -19,7 +20,8 @@ elif echo $os | grep -iq 'darwin'; then
   #####################
   echo "MacOS detected."
   
-  sudo port install fish
+  packages=$(grep -v '#' macos/ports | tr '\n' ' ')
+  sudo port install $packages
   pip install --user powerline-status
 fi
 

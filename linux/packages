@@ -1,0 +1,5 @@
+# apt packages to install.
+# file is converted into a single apt install command.
+curl
+fish
+powerline
