@@ -6,11 +6,14 @@
 [user]
         name = James Badger
         email = james@jamesbadger.ca
+[apply]
+        whitespace = nowarn
 [color]
         diff = auto
         status = auto
         branch = auto
+[commit]
+        verbose = true
 [core]
         excludesfile = ~/.gitignore
-[apply]
-        whitespace = nowarn
+
