@@ -66,5 +66,6 @@ sudo chsh $USER -s /usr/bin/fish
 fish fish/defaults.fish
 fish fish/abbreviations.fish
 fish fish/install_fisher.fish
+fish fish/install_starship.fish
 
 echo "Default shell changes will take affect after a logout."

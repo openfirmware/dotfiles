@@ -4,3 +4,6 @@
 [submodule "fisher"]
 	path = fish/fisher
 	url = https://github.com/jorgebucaran/fisher
+[submodule "starship"]
+	path = fish/starship
+	url = https://github.com/starship/starship
