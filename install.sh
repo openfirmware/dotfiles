@@ -61,7 +61,17 @@ else
 fi
 
 echo "# Setting up fish #"
-sudo chsh $USER -s /usr/bin/fish
+if echo $os | grep -iq 'linux'; then
+  # Linux Configuration
+  #####################
+  sudo chsh $USER -s /usr/bin/fish
+
+elif echo $os | grep -iq 'darwin'; then
+  # MacOS Configuration
+  #####################
+  sudo chsh -s /opt/local/bin/fish $USER
+fi
+
 
 fish fish/defaults.fish
 fish fish/abbreviations.fish
