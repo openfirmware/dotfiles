@@ -4,41 +4,14 @@ set -e
 # Install packages
 echo "# Installing packages #"
 
-os=$(uname -a)
+uname=$(uname -a)
 
-if echo $os | grep -iq 'linux'; then
-  # Linux Configuration
-  #####################
-  echo "linux detected."
-  
-  packages=$(grep -v '#' linux/packages | tr '\n' ' ')
-  sudo apt install -y $packages
-  sudo update-alternatives --set editor /usr/bin/vim.basic
-
-  mkdir -p $HOME/.config/fish/conf.d
-  echo 'source /etc/grc.fish' > $HOME/.config/fish/conf.d/grc.fish
-
-elif echo $os | grep -iq 'darwin'; then
-  # MacOS Configuration
-  #####################
-  echo "MacOS detected."
-  
-  packages=$(grep -v '#' macos/ports | tr '\n' ' ')
-  sudo port install $packages
-  pip install --user powerline-status
+# Use different install scripts for GNU or BSD because they use different tool flags
+if echo $uname | grep -iq 'linux'; then
+  bash gnu-install.sh
+elif echo $uname | grep -iq 'darwin'; then
+  bash bsd-install.sh
 fi
-
-# Install symlinks to configurations
-function link_dotfile() {
-	ln -Ffhsv "$1" "$2"
-}
-
-linkables=$(find $(pwd) -maxdepth 2 -name "*.symlink" -print)
-for file in $linkables
-do
-	filename=$(basename "$file" .symlink)
-	link_dotfile "$file" "$HOME/.$filename"
-done
 
 echo "# Installing fzf #"
 if [ ! -d $HOME/.fzf ]; then
@@ -60,22 +33,7 @@ else
   echo "tmux plugin manager already installed."
 fi
 
-echo "# Setting up fish #"
-if echo $os | grep -iq 'linux'; then
-  # Linux Configuration
-  #####################
-  sudo chsh $USER -s /usr/bin/fish
-
-elif echo $os | grep -iq 'darwin'; then
-  # MacOS Configuration
-  #####################
-  sudo chsh -s /opt/local/bin/fish $USER
-fi
-
-
 fish fish/defaults.fish
 fish fish/abbreviations.fish
 fish fish/install_fisher.fish
 fish fish/install_starship.fish
-
-echo "Default shell changes will take affect after a logout."
